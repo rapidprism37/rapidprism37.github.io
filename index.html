@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玩物社区套路_原创视频社区与品牌官方门户</title>
+<meta name="description" content="玩物社区套路官方网站，专注玩物社区套路领域原创视频内容与创作者社区，深耕兴趣玩法、经验分享与品牌故事，为同好提供值得信赖的高品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff5a1f'/%3E%3Cpath d='M14 20h36v24H14z' fill='%23fff8f2'/%3E%3Cpath d='M27 26l14 8-14 8z' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --wwy-amber:#ff5a1f;
+  --wwy-amber-deep:#e0440b;
+  --wwy-cream:#fff8f2;
+  --wwy-sand:#f6e9dd;
+  --wwy-ink:#241a13;
+  --wwy-ink-soft:#5c4a3d;
+  --wwy-line:#e8d6c6;
+  --wwy-teal:#0f7a72;
+  --wwy-card:#ffffff;
+  --wwy-shadow:0 10px 30px rgba(90,50,20,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--wwy-ink);
+  background:var(--wwy-cream);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:800}
+p{margin:0 0 12px}
+ul{margin:0;padding:0;list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wwy-shell{width:min(1180px,92vw);margin:0 auto}
+
+/* ===== 吸顶公告 + 页头 ===== */
+.wwy-sticky-wrap{position:sticky;top:0;z-index:60}
+.wwy-notice{
+  background:linear-gradient(90deg,var(--wwy-amber) 0%,#ff8a3d 55%,#ffb15c 100%);
+  color:#fff;
+  font-size:13.5px;
+  letter-spacing:.2px;
+}
+.wwy-notice-in{display:flex;align-items:center;gap:12px;padding:8px 0;flex-wrap:wrap}
+.wwy-notice-tag{
+  flex:none;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;padding:1px 10px;font-weight:700;font-size:12px;
+}
+.wwy-notice-txt{flex:1;min-width:200px}
+.wwy-notice-link{font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.wwy-header{
+  background:rgba(255,248,242,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--wwy-line);
+  box-shadow:0 4px 18px rgba(120,70,30,.06);
+}
+.wwy-nav-row{display:flex;align-items:center;gap:20px;padding:12px 0}
+.wwy-logo{display:flex;align-items:center;gap:10px;flex:none}
+.wwy-logo-mark{
+  width:42px;height:42px;border-radius:12px;flex:none;
+  background:conic-gradient(from 210deg,var(--wwy-amber),#ffb15c,var(--wwy-teal),var(--wwy-amber));
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:18px;
+  box-shadow:0 6px 16px rgba(255,90,31,.3);
+}
+.wwy-logo-text{display:flex;flex-direction:column;line-height:1.15}
+.wwy-logo-name{font-size:18px;font-weight:900;letter-spacing:.5px}
+.wwy-logo-sub{font-size:11px;color:var(--wwy-ink-soft);letter-spacing:2px}
+.wwy-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+.wwy-nav a{
+  padding:7px 12px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--wwy-ink-soft);
+  transition:.2s;
+}
+.wwy-nav a:hover,.wwy-nav a.wwy-active{background:var(--wwy-sand);color:var(--wwy-amber-deep)}
+.wwy-search{position:relative;flex:none;width:220px}
+.wwy-search input{
+  width:100%;padding:9px 36px 9px 14px;border-radius:999px;border:1px solid var(--wwy-line);
+  background:#fff;font-size:13.5px;color:var(--wwy-ink);outline:none;transition:.2s;
+}
+.wwy-search input:focus{border-color:var(--wwy-amber);box-shadow:0 0 0 3px rgba(255,90,31,.14)}
+.wwy-search-btn{
+  position:absolute;right:5px;top:50%;transform:translateY(-50%);
+  width:28px;height:28px;border-radius:50%;background:var(--wwy-amber);color:#fff;
+  display:grid;place-items:center;font-size:13px;
+}
+.wwy-search-tip{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1px solid var(--wwy-line);
+  border-radius:14px;box-shadow:var(--wwy-shadow);padding:8px;font-size:13px;display:none;z-index:70;
+}
+.wwy-search-tip.wwy-show{display:block}
+.wwy-search-tip li{padding:6px 10px;border-radius:8px;color:var(--wwy-ink-soft);cursor:pointer}
+.wwy-search-tip li:hover{background:var(--wwy-sand);color:var(--wwy-amber-deep)}
+.wwy-burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--wwy-line);background:#fff;font-size:18px;flex:none}
+.wwy-mobile-panel{display:none;border-top:1px solid var(--wwy-line);padding:10px 0 16px}
+.wwy-mobile-panel.wwy-open{display:block}
+.wwy-mobile-panel a{display:block;padding:10px 6px;font-weight:600;border-bottom:1px dashed var(--wwy-line)}
+.wwy-mobile-panel .wwy-search{width:100%;margin-top:10px}
+
+/* ===== 首屏 ===== */
+.wwy-hero{padding:52px 0 40px;position:relative;overflow:hidden}
+.wwy-hero::before{
+  content:"";position:absolute;inset:auto -10% 40% auto;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,90,31,.18),transparent 68%);
+  pointer-events:none;
+}
+.wwy-hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:46px;align-items:center;position:relative}
+.wwy-kicker{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--wwy-line);
+  border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;color:var(--wwy-amber-deep);
+  box-shadow:0 4px 12px rgba(255,90,31,.10);
+}
+.wwy-kicker i{width:7px;height:7px;border-radius:50%;background:var(--wwy-teal);display:inline-block}
+.wwy-hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-1px;margin:18px 0 10px}
+.wwy-hero h1 em{font-style:normal;color:var(--wwy-amber)}
+.wwy-hero-lead{font-size:17px;color:var(--wwy-ink-soft);max-width:560px}
+.wwy-hero-desc{
+  margin-top:18px;padding:18px 20px;background:#fff;border-radius:18px;border:1px solid var(--wwy-line);
+  font-size:14.5px;color:var(--wwy-ink-soft);box-shadow:var(--wwy-shadow);
+}
+.wwy-hero-desc b{color:var(--wwy-ink)}
+.wwy-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.wwy-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+  font-weight:700;font-size:14.5px;transition:.2s;
+}
+.wwy-btn-main{background:var(--wwy-amber);color:#fff;box-shadow:0 10px 22px rgba(255,90,31,.32)}
+.wwy-btn-main:hover{background:var(--wwy-amber-deep);transform:translateY(-2px)}
+.wwy-btn-ghost{background:#fff;border:1px solid var(--wwy-line);color:var(--wwy-ink)}
+.wwy-btn-ghost:hover{border-color:var(--wwy-amber);color:var(--wwy-amber-deep)}
+.wwy-hero-stats{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.wwy-stat b{display:block;font-size:26px;font-weight:900;color:var(--wwy-amber-deep)}
+.wwy-stat span{font-size:12.5px;color:var(--wwy-ink-soft)}
+.wwy-hero-visual{position:relative}
+.wwy-hero-cover{
+  border-radius:22px;overflow:hidden;box-shadow:0 24px 46px rgba(120,60,20,.22);
+  border:5px solid #fff;
+}
+.wwy-hero-cover img{width:100%;height:auto}
+.wwy-hero-float{
+  position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:16px;padding:12px 16px;
+  box-shadow:var(--wwy-shadow);border:1px solid var(--wwy-line);font-size:13px;font-weight:700;
+  display:flex;align-items:center;gap:10px;
+}
+.wwy-hero-float span{width:34px;height:34px;border-radius:50%;background:var(--wwy-teal);color:#fff;display:grid;place-items:center;font-size:15px}
+
+/* ===== 通用区块 ===== */
+.wwy-section{padding:56px 0}
+.wwy-section-alt{background:var(--wwy-sand)}
+.wwy-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.wwy-sec-tag{font-size:12.5px;font-weight:800;color:var(--wwy-amber-deep);letter-spacing:2px}
+.wwy-sec-head h2{font-size:clamp(24px,3.2vw,34px);letter-spacing:-.5px;margin-top:6px}
+.wwy-sec-note{font-size:14px;color:var(--wwy-ink-soft);max-width:520px}
+
+/* 焦点区 */
+.wwy-focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.wwy-vcard{
+  background:var(--wwy-card);border-radius:18px;overflow:hidden;border:1px solid var(--wwy-line);
+  box-shadow:0 6px 18px rgba(120,70,30,.06);transition:.25s;display:flex;flex-direction:column;
+}
+.wwy-vcard:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(120,70,30,.14)}
+.wwy-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--wwy-sand)}
+.wwy-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.wwy-vcard:hover .wwy-thumb img{transform:scale(1.05)}
+.wwy-thumb-tag{
+  position:absolute;left:10px;top:10px;background:rgba(20,12,6,.72);color:#fff;font-size:11.5px;
+  padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);font-weight:600;
+}
+.wwy-thumb-dur{
+  position:absolute;right:10px;bottom:10px;background:rgba(20,12,6,.78);color:#fff;font-size:11.5px;
+  padding:2px 8px;border-radius:6px;font-variant-numeric:tabular-nums;
+}
+.wwy-thumb-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:grid;place-items:center;color:var(--wwy-amber-deep);font-size:19px;
+  opacity:.92;transition:.25s;box-shadow:0 8px 18px rgba(0,0,0,.22);
+}
+.wwy-vcard:hover .wwy-thumb-play{transform:translate(-50%,-50%) scale(1.12);background:#fff}
+.wwy-thumb::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,10,4,.42));
+  pointer-events:none;
+}
+.wwy-vbody{padding:15px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.wwy-vbody h3{font-size:16px;line-height:1.45}
+.wwy-vbody p{font-size:13.5px;color:var(--wwy-ink-soft);margin:0}
+.wwy-vmeta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--wwy-ink-soft);flex-wrap:wrap}
+.wwy-avatar{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  font-size:12px;font-weight:800;flex:none;letter-spacing:0;
+}
+.wwy-vops{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.wwy-op{
+  font-size:12.5px;font-weight:700;color:var(--wwy-ink-soft);background:var(--wwy-cream);
+  border:1px solid var(--wwy-line);border-radius:999px;padding:4px 11px;transition:.18s;
+}
+.wwy-op:hover{color:var(--wwy-amber-deep);border-color:var(--wwy-amber)}
+.wwy-op.wwy-on{background:#fff1ea;border-color:var(--wwy-amber);color:var(--wwy-amber-deep)}
+.wwy-focus-side{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.wwy-focus-side .wwy-vbody h3{font-size:14px}
+
+/* 深度解析 */
+.wwy-deep-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.wwy-deep-card{background:#fff;border:1px solid var(--wwy-line);border-radius:20px;padding:26px 28px;box-shadow:var(--wwy-shadow)}
+.wwy-deep-card h3{font-size:19px;margin-bottom:10px;color:var(--wwy-amber-deep)}
+.wwy-deep-card p{font-size:14.5px;color:var(--wwy-ink-soft);margin-bottom:12px}
+.wwy-deep-card p b{color:var(--wwy-ink)}
+.wwy-quoteblock{
+  border-left:4px solid var(--wwy-teal);padding:6px 0 6px 16px;margin:14px 0;
+  font-size:14.5px;color:var(--wwy-ink);background:rgba(15,122,114,.05);border-radius:0 12px 12px 0;
+}
+
+/* 视频流 */
+.wwy-stream-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wwy-stream-grid .wwy-vbody h3{font-size:15px}
+.wwy-tagchip{
+  display:inline-block;font-size:11.5px;font-weight:700;color:var(--wwy-teal);
+  background:rgba(15,122,114,.09);border-radius:999px;padding:2px 9px;
+}
+
+/* 专题 */
+.wwy-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.wwy-topic{
+  background:#fff;border:1px solid var(--wwy-line);border-radius:18px;overflow:hidden;
+  transition:.25s;display:flex;flex-direction:column;
+}
+.wwy-topic:hover{transform:translateY(-4px);box-shadow:var(--wwy-shadow)}
+.wwy-topic img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.wwy-topic-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.wwy-topic-body h3{font-size:15px}
+.wwy-topic-body p{font-size:12.8px;color:var(--wwy-ink-soft);margin:0}
+.wwy-topic-state{font-size:11.5px;font-weight:800;color:var(--wwy-amber-deep);margin-top:auto}
+
+/* 创作者 */
+.wwy-creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wwy-creator{
+  background:#fff;border:1px solid var(--wwy-line);border-radius:18px;padding:20px;
+  display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.wwy-creator:hover{border-color:var(--wwy-amber);box-shadow:var(--wwy-shadow)}
+.wwy-creator-top{display:flex;align-items:center;gap:12px}
+.wwy-creator-ava{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:19px;font-weight:900;flex:none}
+.wwy-creator-top h3{font-size:16px}
+.wwy-creator-top span{font-size:12px;color:var(--wwy-ink-soft)}
+.wwy-creator p{font-size:13.4px;color:var(--wwy-ink-soft);margin:0;flex:1}
+.wwy-creator-nums{display:flex;gap:16px;font-size:12.5px;color:var(--wwy-ink-soft)}
+.wwy-creator-nums b{color:var(--wwy-amber-deep);font-size:15px}
+.wwy-creator-btn{
+  align-self:flex-start;font-size:12.5px;font-weight:800;color:var(--wwy-amber-deep);
+  background:#fff1ea;border-radius:999px;padding:5px 14px;transition:.18s;
+}
+.wwy-creator-btn:hover{background:var(--wwy-amber);color:#fff}
+
+/* 故事区 */
+.wwy-story-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:26px;align-items:start}
+.wwy-story-img{border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:var(--wwy-shadow)}
+.wwy-story-list{display:flex;flex-direction:column;gap:14px}
+.wwy-story{
+  background:#fff;border:1px solid var(--wwy-line);border-radius:16px;padding:16px 18px;
+}
+.wwy-story h3{font-size:15.5px;margin-bottom:6px}
+.wwy-story p{font-size:13.4px;color:var(--wwy-ink-soft);margin:0}
+.wwy-story small{display:block;margin-top:8px;font-size:11.5px;color:var(--wwy-amber-deep);font-weight:700}
+
+/* 评价 */
+.wwy-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wwy-review{
+  background:#fff;border-radius:18px;border:1px solid var(--wwy-line);padding:18px 18px 16px;
+  display:flex;flex-direction:column;gap:10px;position:relative;
+}
+.wwy-review::before{
+  content:"”";position:absolute;right:16px;top:2px;font-size:52px;color:var(--wwy-sand);
+  font-family:Georgia,serif;line-height:1;
+}
+.wwy-review p{font-size:13.6px;color:var(--wwy-ink-soft);margin:0;position:relative;z-index:1}
+.wwy-review-who{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--wwy-ink-soft)}
+.wwy-stars{color:#f2a33c;font-size:12px;letter-spacing:1px}
+
+/* 榜单 */
+.wwy-rank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wwy-rank{background:#fff;border:1px solid var(--wwy-line);border-radius:18px;padding:18px 20px}
+.wwy-rank h3{font-size:15.5px;margin-bottom:12px;color:var(--wwy-amber-deep)}
+.wwy-rank ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.wwy-rank li{display:flex;align-items:center;gap:10px;font-size:13.3px;color:var(--wwy-ink-soft)}
+.wwy-rank-num{
+  width:22px;height:22px;border-radius:7px;background:var(--wwy-sand);color:var(--wwy-ink-soft);
+  display:grid;place-items:center;font-size:11.5px;font-weight:800;flex:none;
+}
+.wwy-rank li:nth-child(1) .wwy-rank-num{background:var(--wwy-amber);color:#fff}
+.wwy-rank li:nth-child(2) .wwy-rank-num{background:#ffb15c;color:#fff}
+.wwy-rank li:nth-child(3) .wwy-rank-num{background:var(--wwy-teal);color:#fff}
+
+/* 动态 */
+.wwy-news-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wwy-news{
+  display:flex;gap:14px;background:#fff;border:1px solid var(--wwy-line);border-radius:14px;padding:14px 16px;
+}
+.wwy-news-date{
+  flex:none;width:52px;text-align:center;font-size:11.5px;font-weight:800;color:var(--wwy-amber-deep);
+  background:#fff1ea;border-radius:10px;padding:6px 0;line-height:1.35;
+}
+.wwy-news-date b{display:block;font-size:17px}
+.wwy-news div h3{font-size:14.2px;margin-bottom:3px}
+.wwy-news div p{font-size:12.8px;color:var(--wwy-ink-soft);margin:0}
+
+/* FAQ */
+.wwy-faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wwy-faq details{
+  background:#fff;border:1px solid var(--wwy-line);border-radius:14px;padding:4px 16px;
+  transition:.2s;
+}
+.wwy-faq details[open]{border-color:var(--wwy-amber);box-shadow:0 8px 20px rgba(255,90,31,.08)}
+.wwy-faq summary{
+  cursor:pointer;font-weight:700;font-size:14px;padding:12px 0;list-style:none;
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+}
+.wwy-faq summary::-webkit-details-marker{display:none}
+.wwy-faq summary::after{content:"+";font-weight:900;color:var(--wwy-amber);font-size:17px;line-height:1}
+.wwy-faq details[open] summary::after{content:"−"}
+.wwy-faq details p{font-size:13.3px;color:var(--wwy-ink-soft);margin:0 0 14px}
+
+/* 投稿联系 */
+.wwy-join{
+  display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;
+  background:linear-gradient(125deg,#241a13 0%,#4a2c17 60%,#7a3c14 100%);
+  border-radius:26px;padding:40px;color:#fff;position:relative;overflow:hidden;
+}
+.wwy-join::after{
+  content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,90,31,.5),transparent 70%);
+}
+.wwy-join h2{font-size:clamp(22px,3vw,30px);margin-bottom:10px;position:relative;z-index:1}
+.wwy-join p{font-size:14px;color:#f0ddcd;position:relative;z-index:1}
+.wwy-join-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}
+.wwy-join .wwy-btn-ghost{background:transparent;border-color:rgba(255,255,255,.42);color:#fff}
+.wwy-join .wwy-btn-ghost:hover{border-color:#fff;color:#fff}
+.wwy-contact{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.wwy-contact li{display:flex;gap:10px;font-size:13.5px;color:#f0ddcd;align-items:flex-start}
+.wwy-contact li b{color:#fff;flex:none;width:64px}
+
+/* 页脚 */
+.wwy-footer{background:#1c130d;color:#c9b8ab;padding:46px 0 24px;font-size:13.3px}
+.wwy-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.wwy-footer h4{color:#fff;font-size:14px;margin-bottom:12px}
+.wwy-footer li{margin-bottom:8px}
+.wwy-footer a:hover{color:var(--wwy-amber)}
+.wwy-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.wwy-footer p{color:#a08e81;margin-bottom:8px}
+.wwy-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;color:#8d7c70;font-size:12.5px;
+}
+
+/* 回到顶部 */
+.wwy-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:14px;
+  background:var(--wwy-amber);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:900;
+  box-shadow:0 12px 26px rgba(255,90,31,.4);opacity:0;pointer-events:none;transition:.25s;z-index:80;
+}
+.wwy-top.wwy-show{opacity:1;pointer-events:auto}
+.wwy-top:hover{background:var(--wwy-amber-deep);transform:translateY(-3px)}
+
+/* Toast & 弹窗 */
+.wwy-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(28,19,13,.94);color:#fff;padding:11px 22px;border-radius:999px;font-size:13.5px;
+  opacity:0;pointer-events:none;transition:.28s;z-index:120;font-weight:600;
+}
+.wwy-toast.wwy-show{opacity:1;transform:translate(-50%,0)}
+.wwy-modal-mask{
+  position:fixed;inset:0;background:rgba(20,12,6,.56);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;z-index:110;padding:20px;
+}
+.wwy-modal-mask.wwy-show{display:flex}
+.wwy-modal{
+  background:#fff;border-radius:22px;max-width:460px;width:100%;padding:26px 26px 22px;
+  box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;animation:wwyPop .25s ease;
+}
+@keyframes wwyPop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.wwy-modal h3{font-size:19px;margin-bottom:8px}
+.wwy-modal p{font-size:13.6px;color:var(--wwy-ink-soft)}
+.wwy-modal-close{position:absolute;right:14px;top:12px;font-size:20px;color:var(--wwy-ink-soft)}
+.wwy-share-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.wwy-share-row button{
+  padding:9px 15px;border-radius:999px;background:var(--wwy-sand);font-weight:700;font-size:13px;
+  color:var(--wwy-ink);transition:.18s;
+}
+.wwy-share-row button:hover{background:var(--wwy-amber);color:#fff}
+.wwy-modal input,.wwy-modal textarea{
+  width:100%;border:1px solid var(--wwy-line);border-radius:12px;padding:10px 12px;font-size:13.5px;
+  font-family:inherit;margin-bottom:10px;outline:none;color:var(--wwy-ink);
+}
+.wwy-modal input:focus,.wwy-modal textarea:focus{border-color:var(--wwy-amber)}
+.wwy-modal textarea{resize:vertical;min-height:82px}
+
+/* 响应式 */
+@media (max-width:1000px){
+  .wwy-hero-grid{grid-template-columns:1fr;gap:32px}
+  .wwy-focus-grid{grid-template-columns:1fr}
+  .wwy-stream-grid,.wwy-creator-grid,.wwy-review-grid,.wwy-rank-grid{grid-template-columns:repeat(2,1fr)}
+  .wwy-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .wwy-deep-grid,.wwy-story-grid,.wwy-join,.wwy-footer-grid{grid-template-columns:1fr}
+  .wwy-footer-grid{gap:22px}
+}
+@media (max-width:760px){
+  .wwy-nav,.wwy-search{display:none}
+  .wwy-burger{display:grid;place-items:center}
+  .wwy-nav-row{justify-content:space-between}
+  .wwy-stream-grid,.wwy-creator-grid,.wwy-review-grid,.wwy-rank-grid,.wwy-focus-side,.wwy-news-list,.wwy-faq{grid-template-columns:1fr}
+  .wwy-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .wwy-join{padding:28px 22px}
+  .wwy-hero{padding:34px 0 26px}
+  .wwy-section{padding:42px 0}
+  .wwy-notice-in{font-size:12.5px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body id="wwy-top-anchor">
+
+<div class="wwy-sticky-wrap">
+  <div class="wwy-notice">
+    <div class="wwy-shell wwy-notice-in">
+      <span class="wwy-notice-tag">公告</span>
+      <span class="wwy-notice-txt">【品牌动态】玩物社区套路 2026 冬季「套路拆解实验室」企划上线，新增 12 期实战拆解视频；投稿通道同步开启，优质稿件将获得官方推荐位。</span>
+      <a class="wwy-notice-link" href="#wwy-join">查看详情</a>
+    </div>
+  </div>
+  <header class="wwy-header">
+    <div class="wwy-shell wwy-nav-row">
+      <a class="wwy-logo" href="#wwy-top-anchor">
+        <span class="wwy-logo-mark">玩</span>
+        <span class="wwy-logo-text">
+          <span class="wwy-logo-name">玩物社区套路</span>
+          <span class="wwy-logo-sub">OFFICIAL SITE</span>
+        </span>
+      </a>
+      <nav class="wwy-nav" aria-label="主导航">
+        <a href="#wwy-hero" class="wwy-active">首页</a>
+        <a href="#wwy-focus">焦点</a>
+        <a href="#wwy-stream">视频流</a>
+        <a href="#wwy-topic">专题</a>
+        <a href="#wwy-creator">创作者</a>
+        <a href="#wwy-news">企业动态</a>
+        <a href="#wwy-faq">帮助</a>
+        <a href="#wwy-join">联系</a>
+      </nav>
+      <div class="wwy-search">
+        <input id="wwy-search-input" type="search" placeholder="搜索套路、玩法、创作者" aria-label="站内搜索">
+        <button class="wwy-search-btn" id="wwy-search-btn" aria-label="搜索">⌕</button>
+        <ul class="wwy-search-tip" id="wwy-search-tip"></ul>
+      </div>
+      <button class="wwy-burger" id="wwy-burger" aria-label="展开导航" aria-expanded="false">☰</button>
+    </div>
+    <div class="wwy-mobile-panel" id="wwy-mobile-panel">
+      <div class="wwy-shell">
+        <a href="#wwy-hero">首页</a>
+        <a href="#wwy-focus">焦点</a>
+        <a href="#wwy-stream">视频流</a>
+        <a href="#wwy-topic">专题</a>
+        <a href="#wwy-creator">创作者</a>
+        <a href="#wwy-news">企业动态</a>
+        <a href="#wwy-faq">帮助</a>
+        <a href="#wwy-join">联系</a>
+        <div class="wwy-search">
+          <input id="wwy-search-input-m" type="search" placeholder="搜索套路、玩法、创作者" aria-label="站内搜索移动端">
+          <button class="wwy-search-btn" id="wwy-search-btn-m" aria-label="搜索">⌕</button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- 首屏 -->
+<section class="wwy-hero" id="wwy-hero">
+  <div class="wwy-shell wwy-hero-grid">
+    <div>
+      <span class="wwy-kicker"><i></i>品牌官方网站 · 原创视频社区</span>
+      <h1>玩物<em>社区套路</em></h1>
+      <p class="wwy-hero-lead">把每一次“玩物”的乐趣，拆成可复用的套路。这里是玩物社区套路的官方视频门户，也是同好们交换经验、打磨玩法、记录日常的地方。</p>
+      <div class="wwy-hero-desc">
+        <p><b>玩物社区套路</b>是一家深耕兴趣玩法领域的视频内容品牌。我们以“套路”为核心方法论，把民间玩家口口相传的经验、技巧与巧思，整理成结构清晰、可看可学的视频内容。作为持续运营的内容平台，我们连接创作者、品牌与用户，构建正版、高清、多元的内容生态。官网以原创视频为骨架，以社区讨论为血肉，陪伴每一位玩家从“随便玩玩”走向“玩出门道”。</p>
+      </div>
+      <div class="wwy-hero-actions">
+        <a class="wwy-btn wwy-btn-main" href="#wwy-stream">浏览精品内容</a>
+        <a class="wwy-btn wwy-btn-ghost" href="#wwy-creator">认识创作者</a>
+        <button class="wwy-btn wwy-btn-ghost" id="wwy-share-hero">分享本站</button>
+      </div>
+      <div class="wwy-hero-stats">
+        <div class="wwy-stat"><b data-count="2860">0</b><span>原创视频累计</span></div>
+        <div class="wwy-stat"><b data-count="47">0</b><span>签约创作者（位）</span></div>
+        <div class="wwy-stat"><b data-count="186">0</b><span>社区活跃话题（万）</span></div>
+      </div>
+    </div>
+    <div class="wwy-hero-visual">
+      <div class="wwy-hero-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5a1f'/%3E%3Cstop offset='0.55' stop-color='%23ff9a4d'/%3E%3Cstop offset='1' stop-color='%23ffd7a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g1)'/%3E%3Ccircle cx='620' cy='110' r='150' fill='%23fff' opacity='0.16'/%3E%3Ccircle cx='180' cy='360' r='110' fill='%230f7a72' opacity='0.35'/%3E%3Crect x='90' y='120' width='300' height='190' rx='18' fill='%23fff8f2' opacity='0.95'/%3E%3Crect x='112' y='142' width='256' height='100' rx='10' fill='%23241a13' opacity='0.85'/%3E%3Cpath d='M228 172l34 20-34 20z' fill='%23ff5a1f'/%3E%3Crect x='112' y='256' width='160' height='12' rx='6' fill='%23e8d6c6'/%3E%3Crect x='112' y='278' width='220' height='12' rx='6' fill='%23e8d6c6'/%3E%3Crect x='420' y='230' width='290' height='18' rx='9' fill='%23fff8f2' opacity='0.9'/%3E%3Crect x='420' y='262' width='210' height='18' rx='9' fill='%23fff8f2' opacity='0.68'/%3E%3Crect x='420' y='294' width='250' height='18' rx='9' fill='%23fff8f2' opacity='0.5'/%3E%3C/svg%3E" alt="玩物社区套路品牌主视觉封面">
+      </div>
+      <div class="wwy-hero-float"><span>▶</span>本周精选 · 套路拆解第 12 期</div>
+    </div>
+  </div>
+</section>
+
+<!-- 品牌深度解析 -->
+<section class="wwy-section" id="wwy-about">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">ABOUT · 品牌解析</div>
+        <h2>什么是玩物社区套路</h2>
+      </div>
+      <p class="wwy-sec-note">我们不生产“神操作”，我们只是把好用的玩法沉淀下来，让每个愿意动手的人少走弯路。</p>
+    </div>
+    <div class="wwy-deep-grid">
+      <article class="wwy-deep-card">
+        <h3>定位：玩法经验的公开档案</h3>
+        <p>“玩物”指一切值得花时间琢磨的东西——模型、手办、桌游、户外装备、复古相机、家庭收纳、机械键盘、庭院植物，甚至是一顿周末的慢炖。而“社区套路”，是玩家们反复验证后留下的可复用路径：怎么入门、怎么避坑、怎么在有限预算里获得最大乐趣。</p>
+        <p>作为玩物社区套路的<b>官方网站</b>，我们把这类经验视频化、结构化，按难度、成本、周期分门别类。你可以把它理解成一座不断生长的玩法图书馆，每一条视频都是一次真实的实践记录，而非纸上谈兵。</p>
+        <p>我们相信<b>真实</b>最有力量。镜头里出现的失败、返工、翻车，和最后成功的瞬间一样重要。因为“套路”不是捷径，而是别人替你交过学费之后总结出的路标。</p>
+      </article>
+      <article class="wwy-deep-card">
+        <h3>内容生态：创作者、品牌与用户三方共建</h3>
+        <p>玩物社区套路的<b>内容生态</b>由三部分构成。其一是签约与入驻的<b>创作者</b>，他们来自不同兴趣圈层，各自深耕垂直领域；其二是合作品牌与线下空间，提供设备、场地与真实使用场景；其三是数量最大的普通用户，他们的提问、补充与反驳，让每一条套路都被持续修正。</p>
+        <p>平台坚持原创与正版，所有精品内容均标注来源、器材与成本区间，方便你判断是否适合自己。我们不做夸张标题，不堆砌无效镜头，力求用清晰的步骤、稳定的画面与诚恳的讲述，换来长期<b>口碑</b>。</p>
+        <div class="wwy-quoteblock">“套路可以学，乐趣得自己找。”这是玩物社区套路反复出现的一句话，也是我们做内容时的底线——教你方法，但不替你做选择。</div>
+      </article>
+      <article class="wwy-deep-card">
+        <h3>为什么叫“套路”，而不是“攻略”</h3>
+        <p>攻略强调通关，套路强调复用。一个套路，往往包含明确的适用前提：预算多少、时间多少、需要哪些工具、会遇到什么意外。我们更愿意把每条内容写成一份小型的“实验报告”，让你看完之后，能判断它究竟适不适合自己。</p>
+        <p>也正因如此，玩物社区套路的内容节奏普遍不快。拆包装、比对参数、记录失败次数、复盘成本，都是固定环节。我们知道这样会损失一部分追求刺激的观众，但留下的，往往是真的愿意动手的人。</p>
+        <p>在这个意义上，玩物社区套路更像一个<b>持续运营</b>的社区，而非一次性的内容仓库。你的每一次评论、投稿与纠错，都会让下一位玩家少踩一个坑。</p>
+      </article>
+      <article class="wwy-deep-card">
+        <h3>方法论：四步拆解法</h3>
+        <p>我们内部把内容生产总结为四步：<b>拆目标</b>——这条视频帮用户解决什么问题；<b>拆限制</b>——预算、时间、空间、技能门槛；<b>拆步骤</b>——把过程切成可复现的小段；<b>拆成本</b>——时间成本与经济成本都要算清。</p>
+        <p>四步拆解法也被用在社区共创中。任何用户都可以按这个框架提交自己的玩法记录，通过审核后进入官方内容库。我们为优质投稿提供剪辑支持与推荐位，让好的经验被更多人看见。</p>
+        <p>如果你刚接触玩物社区套路，建议从“入门套路”标签开始，先看一条 5 分钟以内的轻量内容，再逐步进入 20 分钟以上的深度拆解。循序渐进，比一口气刷完更有效。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点内容 -->
+<section class="wwy-section wwy-section-alt" id="wwy-focus">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">FOCUS · 本周焦点</div>
+        <h2>焦点视频：值得先看的两条</h2>
+      </div>
+      <p class="wwy-sec-note">编辑团队每周从新发布内容中挑选两条重点推荐，兼顾入门友好与深度拆解。</p>
+    </div>
+    <div class="wwy-focus-grid">
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23241a13'/%3E%3Cstop offset='1' stop-color='%230f7a72'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g2)'/%3E%3Cg stroke='%23ffb15c' stroke-width='3' opacity='0.55' fill='none'%3E%3Cpath d='M80 340 L200 200 L320 300 L460 140 L600 260 L720 150'/%3E%3C/g%3E%3Ccircle cx='200' cy='200' r='10' fill='%23ff5a1f'/%3E%3Ccircle cx='460' cy='140' r='10' fill='%23ff5a1f'/%3E%3Crect x='90' y='70' width='210' height='22' rx='11' fill='%23fff8f2' opacity='0.9'/%3E%3Crect x='90' y='108' width='140' height='16' rx='8' fill='%23fff8f2' opacity='0.55'/%3E%3C/svg%3E" alt="玩物社区套路焦点视频：百元预算入门桌游的选品逻辑">
+          <span class="wwy-thumb-tag">焦点 · 深度拆解</span>
+          <span class="wwy-thumb-dur">18:42</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>百元预算怎么选第一款桌游：三套方案与五个避坑点</h3>
+          <p>用 100 元左右拿下第一款能反复开的桌游，是很多新玩家最常问的问题。这期视频把选品拆成人数适配、上手时长、重开率三条线，逐条给出可验证的判断方法，并现场开箱对比三款热门入门作品。</p>
+          <div class="wwy-vmeta">
+            <span class="wwy-avatar" style="background:#0f7a72">阿</span>
+            <span>阿椴的木桌</span>
+            <span>·</span>
+            <span>2026-11-16</span>
+            <span class="wwy-tagchip">入门套路</span>
+          </div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 1284</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-comment>评论 96</button>
+            <button class="wwy-op" data-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+      <div class="wwy-focus-side">
+        <article class="wwy-vcard">
+          <div class="wwy-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd7a8'/%3E%3Cstop offset='1' stop-color='%23ff8a3d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g3)'/%3E%3Crect x='120' y='120' width='240' height='240' rx='16' fill='%23fff8f2'/%3E%3Crect x='150' y='150' width='180' height='60' rx='8' fill='%23ff5a1f' opacity='0.8'/%3E%3Crect x='150' y='230' width='120' height='14' rx='7' fill='%23e8d6c6'/%3E%3Crect x='150' y='258' width='160' height='14' rx='7' fill='%23e8d6c6'/%3E%3Crect x='430' y='170' width='260' height='16' rx='8' fill='%23241a13' opacity='0.7'/%3E%3Crect x='430' y='205' width='200' height='16' rx='8' fill='%23241a13' opacity='0.45'/%3E%3Crect x='430' y='240' width='230' height='16' rx='8' fill='%23241a13' opacity='0.3'/%3E%3C/svg%3E" alt="玩物社区套路：家庭收纳的六个可复用套路封面">
+            <span class="wwy-thumb-tag">实操</span>
+            <span class="wwy-thumb-dur">12:06</span>
+            <span class="wwy-thumb-play">▶</span>
+          </div>
+          <div class="wwy-vbody">
+            <h3>小户型收纳的六个可复用套路</h3>
+            <p>从测量开始，而不是从买盒子开始。</p>
+            <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#ff5a1f">林</span><span>林间整理</span></div>
+            <div class="wwy-vops">
+              <button class="wwy-op" data-like>赞 866</button>
+              <button class="wwy-op" data-fav>收藏</button>
+            </div>
+          </div>
+        </article>
+        <article class="wwy-vcard">
+          <div class="wwy-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232a3f4a'/%3E%3Cstop offset='1' stop-color='%234c8c8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g4)'/%3E%3Ccircle cx='400' cy='225' r='120' fill='none' stroke='%23ffb15c' stroke-width='6' opacity='0.7'/%3E%3Ccircle cx='400' cy='225' r='72' fill='none' stroke='%23fff8f2' stroke-width='3' opacity='0.55'/%3E%3Cpath d='M360 200l60 30-60 30z' fill='%23ff5a1f'/%3E%3Crect x='80' y='60' width='180' height='18' rx='9' fill='%23fff8f2' opacity='0.75'/%3E%3C/svg%3E" alt="玩物社区套路：老相机镜头发霉清理实操记录封面">
+            <span class="wwy-thumb-tag">手艺</span>
+            <span class="wwy-thumb-dur">24:15</span>
+            <span class="wwy-thumb-play">▶</span>
+          </div>
+          <div class="wwy-vbody">
+            <h3>老相机镜头发霉，能否自己动手清理</h3>
+            <p>一次有风险但值得记录的拆解实验。</p>
+            <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#2a6f8f">周</span><span>周野取景</span></div>
+            <div class="wwy-vops">
+              <button class="wwy-op" data-like>赞 743</button>
+              <button class="wwy-op" data-fav>收藏</button>
+            </div>
+          </div>
+        </article>
+        <article class="wwy-vcard">
+          <div class="wwy-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f6e9dd'/%3E%3Cstop offset='1' stop-color='%23d9a37c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g5)'/%3E%3Cg fill='%23241a13' opacity='0.72'%3E%3Crect x='140' y='260' width='60' height='90' rx='6'/%3E%3Crect x='215' y='220' width='60' height='130' rx='6'/%3E%3Crect x='290' y='180' width='60' height='170' rx='6'/%3E%3Crect x='365' y='240' width='60' height='110' rx='6'/%3E%3Crect x='440' y='200' width='60' height='150' rx='6'/%3E%3C/g%3E%3Ccircle cx='620' cy='150' r='54' fill='%23ff5a1f' opacity='0.8'/%3E%3Crect x='140' y='90' width='210' height='20' rx='10' fill='%23241a13' opacity='0.35'/%3E%3C/svg%3E" alt="玩物社区套路：家庭咖啡角三个月搭建复盘封面">
+            <span class="wwy-thumb-tag">日常</span>
+            <span class="wwy-thumb-dur">15:30</span>
+            <span class="wwy-thumb-play">▶</span>
+          </div>
+          <div class="wwy-vbody">
+            <h3>家庭咖啡角三个月搭建复盘</h3>
+            <p>预算、动线与器具冗余的真实取舍。</p>
+            <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#b06c3f">何</span><span>何师傅慢冲</span></div>
+            <div class="wwy-vops">
+              <button class="wwy-op" data-like>赞 612</button>
+              <button class="wwy-op" data-fav>收藏</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 视频流 -->
+<section class="wwy-section" id="wwy-stream">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">STREAM · 热门视频流</div>
+        <h2>正在被反复观看的套路</h2>
+      </div>
+      <p class="wwy-sec-note">按热度与口碑综合排序，每周更新。点击标签可快速了解内容方向。</p>
+    </div>
+    <div class="wwy-stream-grid">
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g6' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a3d'/%3E%3Cstop offset='1' stop-color='%23ffd7a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g6)'/%3E%3Ccircle cx='250' cy='220' r='110' fill='%23fff8f2' opacity='0.9'/%3E%3Cpath d='M215 170l80 50-80 50z' fill='%23ff5a1f'/%3E%3Crect x='420' y='150' width='260' height='18' rx='9' fill='%23241a13' opacity='0.55'/%3E%3Crect x='420' y='190' width='180' height='18' rx='9' fill='%23241a13' opacity='0.35'/%3E%3Crect x='420' y='230' width='220' height='18' rx='9' fill='%23241a13' opacity='0.25'/%3E%3C/svg%3E" alt="玩物社区套路：机械键盘轴体试轴的省钱做法封面">
+          <span class="wwy-thumb-tag">测评</span>
+          <span class="wwy-thumb-dur">09:48</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>机械键盘试轴不踩坑：先借后买的省钱做法</h3>
+          <p>把轴体试听做成可复用的小流程，预算立省三分之一。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#c2472a">竹</span><span>竹里按键</span><span class="wwy-tagchip">评测套路</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 534</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g7' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f3d33'/%3E%3Cstop offset='1' stop-color='%235f9c72'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g7)'/%3E%3Cpath d='M0 340 Q200 260 400 320 T800 300 L800 450 L0 450Z' fill='%23c9b48a' opacity='0.45'/%3E%3Ccircle cx='620' cy='130' r='58' fill='%23ffd7a8' opacity='0.85'/%3E%3Cpath d='M180 330 l60 -120 l60 120z' fill='%230f7a72'/%3E%3Cpath d='M250 330 l44 -88 l44 88z' fill='%235f9c72'/%3E%3Crect x='90' y='80' width='190' height='18' rx='9' fill='%23fff8f2' opacity='0.7'/%3E%3C/svg%3E" alt="玩物社区套路：阳台小菜园的四季种植表封面">
+          <span class="wwy-thumb-tag">生活</span>
+          <span class="wwy-thumb-dur">21:03</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>阳台小菜园：一年四季都能照着种的排期表</h3>
+          <p>朝南与朝北两套方案，附失败案例复盘。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#3f7a4f">苏</span><span>苏小满种菜</span><span class="wwy-tagchip">日常记录</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 712</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g8' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23342b4a'/%3E%3Cstop offset='1' stop-color='%23a974b8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g8)'/%3E%3Cg fill='%23fff8f2' opacity='0.85'%3E%3Ccircle cx='170' cy='180' r='40'/%3E%3Ccircle cx='300' cy='150' r='26'/%3E%3Ccircle cx='250' cy='290' r='34'/%3E%3C/g%3E%3Crect x='420' y='150' width='260' height='20' rx='10' fill='%23ffd7a8' opacity='0.8'/%3E%3Crect x='420' y='196' width='200' height='20' rx='10' fill='%23ffd7a8' opacity='0.5'/%3E%3Crect x='420' y='242' width='230' height='20' rx='10' fill='%23ffd7a8' opacity='0.3'/%3E%3C/svg%3E" alt="玩物社区套路：手办防尘展示柜的平价方案封面">
+          <span class="wwy-thumb-tag">手作</span>
+          <span class="wwy-thumb-dur">14:22</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>手办防尘展示柜：平价方案与灯带布线</h3>
+          <p>三百元内完成，兼顾防尘、观感与后期扩展。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#7a4e9e">洛</span><span>洛小盒</span><span class="wwy-tagchip">手作DIY</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 488</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g9' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b7d7e8'/%3E%3Cstop offset='1' stop-color='%234c7f9c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g9)'/%3E%3Cpath d='M0 300 Q200 220 400 290 T800 260 L800 450 L0 450Z' fill='%23fff8f2' opacity='0.5'/%3E%3Cpath d='M330 140 l90 0 l-45 80z' fill='%23ff5a1f'/%3E%3Cpath d='M375 220 l0 70' stroke='%23241a13' stroke-width='6'/%3E%3Crect x='90' y='70' width='210' height='20' rx='10' fill='%23241a13' opacity='0.45'/%3E%3C/svg%3E" alt="玩物社区套路：周末露营轻量化装备清单封面">
+          <span class="wwy-thumb-tag">户外</span>
+          <span class="wwy-thumb-dur">17:11</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>周末露营轻量化清单：把负重压到 8 公斤以内</h3>
+          <p>按季节与人数分档，附三次实测减重记录。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#2b5f7a">陈</span><span>陈野帐篷</span><span class="wwy-tagchip">户外活动</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 903</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g10' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffcf8f'/%3E%3Cstop offset='1' stop-color='%23e07a3f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g10)'/%3E%3Cellipse cx='400' cy='330' rx='220' ry='46' fill='%23241a13' opacity='0.18'/%3E%3Crect x='280' y='180' width='240' height='140' rx='18' fill='%23fff8f2' opacity='0.95'/%3E%3Crect x='310' y='210' width='180' height='16' rx='8' fill='%23e07a3f' opacity='0.7'/%3E%3Crect x='310' y='242' width='130' height='16' rx='8' fill='%23e07a3f' opacity='0.45'/%3E%3Ccircle cx='620' cy='150' r='48' fill='%23fff8f2' opacity='0.6'/%3E%3C/svg%3E" alt="玩物社区套路：一锅慢炖的家常时间表封面">
+          <span class="wwy-thumb-tag">美食</span>
+          <span class="wwy-thumb-dur">11:36</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>一锅慢炖：把周末的两小时用得刚刚好</h3>
+          <p>备料十五分钟，其余交给时间，附失败补救法。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#c25a25">杜</span><span>杜家灶台</span><span class="wwy-tagchip">美食烹饪</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 655</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="wwy-vcard">
+        <div class="wwy-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g11' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8e4dc'/%3E%3Cstop offset='1' stop-color='%23b9aea0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g11)'/%3E%3Crect x='140' y='140' width='520' height='210' rx='14' fill='%23fff8f2'/%3E%3Crect x='170' y='170' width='180' height='120' rx='8' fill='%23241a13' opacity='0.8'/%3E%3Cpath d='M225 200l50 30-50 30z' fill='%23ff5a1f'/%3E%3Crect x='380' y='180' width='240' height='14' rx='7' fill='%23d0c3b4'/%3E%3Crect x='380' y='210' width='190' height='14' rx='7' fill='%23d0c3b4'/%3E%3Crect x='380' y='240' width='220' height='14' rx='7' fill='%23d0c3b4'/%3E%3C/svg%3E" alt="玩物社区套路：五分钟学会给视频加字幕封面">
+          <span class="wwy-thumb-tag">教程</span>
+          <span class="wwy-thumb-dur">05:20</span>
+          <span class="wwy-thumb-play">▶</span>
+        </div>
+        <div class="wwy-vbody">
+          <h3>五分钟学会给玩法视频加清晰字幕</h3>
+          <p>面向手机剪辑新手，三条规则减少返工。</p>
+          <div class="wwy-vmeta"><span class="wwy-avatar" style="background:#8a7a66">方</span><span>方程剪辑</span><span class="wwy-tagchip">实用技巧</span></div>
+          <div class="wwy-vops">
+            <button class="wwy-op" data-like>赞 402</button>
+            <button class="wwy-op" data-fav>收藏</button>
+            <button class="wwy-op" data-share>分享</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 专题 -->
+<section class="wwy-section wwy-section-alt" id="wwy-topic">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">SERIES · 专题企划</div>
+        <h2>四个正在更新的专题</h2>
+      </div>
+      <p class="wwy-sec-note">专题由编辑团队与创作者共同策划，围绕同一命题持续产出，适合按顺序系统观看。</p>
+    </div>
+    <div class="wwy-topic-grid">
+      <article class="wwy-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5a1f'/%3E%3Cstop offset='1' stop-color='%23ffc98f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23t1)'/%3E%3Ccircle cx='200' cy='200' r='98' fill='none' stroke='%23fff8f2' stroke-width='10' opacity='0.85'/%3E%3Cpath d='M172 160l72 40-72 40z' fill='%23fff8f2'/%3E%3C/svg%3E" alt="套路拆解实验室专题封面">
+        <div class="wwy-topic-body">
+          <h3>套路拆解实验室</h3>
+          <p>把热门玩法拆成可复用的步骤，每期一个命题，现场验证。</p>
+          <span class="wwy-topic-state">更新至第 12 期 · 每周三更新</span>
+        </div>
+      </article>
+      <article class="wwy-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23241a13'/%3E%3Cstop offset='1' stop-color='%230f7a72'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23t2)'/%3E%3Cg stroke='%23ffd7a8' stroke-width='6' opacity='0.75'%3E%3Cpath d='M70 300 L150 180 L230 260 L330 120'/%3E%3C/g%3E%3Ccircle cx='150' cy='180' r='12' fill='%23ff5a1f'/%3E%3Ccircle cx='330' cy='120' r='12' fill='%23ff5a1f'/%3E%3C/svg%3E" alt="百元以内玩出名堂专题封面">
+        <div class="wwy-topic-body">
+          <h3>百元以内玩出名堂</h3>
+          <p>限定预算，不限创意。看创作者如何用有限的钱做出好内容。</p>
+          <span class="wwy-topic-state">更新至第 8 期 · 双周更新</span>
+        </div>
+      </article>
+      <article class="wwy-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d9a37c'/%3E%3Cstop offset='1' stop-color='%23f6e9dd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23t3)'/%3E%3Crect x='100' y='120' width='200' height='160' rx='12' fill='%23fff8f2' opacity='0.95'/%3E%3Crect x='125' y='150' width='150' height='14' rx='7' fill='%23241a13' opacity='0.6'/%3E%3Crect x='125' y='180' width='100' height='14' rx='7' fill='%23241a13' opacity='0.4'/%3E%3Crect x='125' y='210' width='120' height='14' rx='7' fill='%23241a13' opacity='0.25'/%3E%3C/svg%3E" alt="翻车现场也值得记录专题封面">
+        <div class="wwy-topic-body">
+          <h3>翻车现场也值得记录</h3>
+          <p>失败比成功更有信息量。这里只讲真实的返工与补救。</p>
+          <span class="wwy-topic-state">更新至第 15 期 · 已完结</span>
+        </div>
+      </article>
+      <article class="wwy-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='t4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234c7f9c'/%3E%3Cstop offset='1' stop-color='%23b7d7e8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23t4)'/%3E%3Ccircle cx='200' cy='190' r='80' fill='%23fff8f2' opacity='0.85'/%3E%3Cpath d='M180 160l46 30-46 30z' fill='%23ff5a1f'/%3E%3Crect x='110' y='300' width='180' height='16' rx='8' fill='%23241a13' opacity='0.35'/%3E%3C/svg%3E" alt="玩家的一平米角落专题封面">
+        <div class="wwy-topic-body">
+          <h3>玩家的一平米角落</h3>
+          <p>空间有限，乐趣无限。走进普通人的桌面、阳台与储物间。</p>
+          <span class="wwy-topic-state">更新至第 6 期 · 每月更新</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 创作者 -->
+<section class="wwy-section" id="wwy-creator">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">CREATORS · 创作者矩阵</div>
+        <h2>六位把套路讲明白的人</h2>
+      </div>
+      <p class="wwy-sec-note">他们各自深耕一个垂直领域，内容风格不同，但都愿意把过程完整地拍下来。</p>
+    </div>
+    <div class="wwy-creator-grid">
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#0f7a72">阿</span>
+          <div><h3>阿椴的木桌</h3><span>桌游 · 入门选品</span></div>
+        </div>
+        <p>八年桌游玩家，擅长把复杂的规则讲成三句话。坚持每期实拍开箱，不做云测评。</p>
+        <div class="wwy-creator-nums"><span><b>126</b> 作品</span><span><b>8.4万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="阿椴的木桌|桌游 · 入门选品|八年桌游玩家，擅长把复杂的规则讲成三句话。坚持每期实拍开箱，不做云测评。">查看档案</button>
+      </article>
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#ff5a1f">林</span>
+          <div><h3>林间整理</h3><span>收纳 · 空间改造</span></div>
+        </div>
+        <p>从测量开始做收纳，先做减法再做加法。她的小户型改造系列被大量用户收藏。</p>
+        <div class="wwy-creator-nums"><span><b>98</b> 作品</span><span><b>12.6万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="林间整理|收纳 · 空间改造|从测量开始做收纳，先做减法再做加法。她的小户型改造系列被大量用户收藏。">查看档案</button>
+      </article>
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#2a6f8f">周</span>
+          <div><h3>周野取景</h3><span>摄影 · 老器材</span></div>
+        </div>
+        <p>用旧相机记录新生活。拆机、清霉、改口，他愿意把风险也拍进镜头。</p>
+        <div class="wwy-creator-nums"><span><b>74</b> 作品</span><span><b>6.1万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="周野取景|摄影 · 老器材|用旧相机记录新生活。拆机、清霉、改口，他愿意把风险也拍进镜头。">查看档案</button>
+      </article>
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#3f7a4f">苏</span>
+          <div><h3>苏小满种菜</h3><span>种植 · 阳台菜园</span></div>
+        </div>
+        <p>阳台种菜第五年，失败次数比成功多。她的排期表按城市气候分档，实用度很高。</p>
+        <div class="wwy-creator-nums"><span><b>142</b> 作品</span><span><b>15.3万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="苏小满种菜|种植 · 阳台菜园|阳台种菜第五年，失败次数比成功多。她的排期表按城市气候分档，实用度很高。">查看档案</button>
+      </article>
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#7a4e9e">洛</span>
+          <div><h3>洛小盒</h3><span>手办 · 展示与收纳</span></div>
+        </div>
+        <p>喜欢把展示柜做成一件作品。预算有限也能做出体面的陈列，是她常挂在嘴边的话。</p>
+        <div class="wwy-creator-nums"><span><b>63</b> 作品</span><span><b>4.8万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="洛小盒|手办 · 展示与收纳|喜欢把展示柜做成一件作品。预算有限也能做出体面的陈列，是她常挂在嘴边的话。">查看档案</button>
+      </article>
+      <article class="wwy-creator">
+        <div class="wwy-creator-top">
+          <span class="wwy-creator-ava" style="background:#c25a25">杜</span>
+          <div><h3>杜家灶台</h3><span>家常菜 · 时间管理</span></div>
+        </div>
+        <p>把做饭当成项目管理：先排时间，再谈味道。他的慢炖系列适合工作日晚上照做。</p>
+        <div class="wwy-creator-nums"><span><b>110</b> 作品</span><span><b>9.7万</b> 关注</span></div>
+        <button class="wwy-creator-btn" data-author="杜家灶台|家常菜 · 时间管理|把做饭当成项目管理：先排时间，再谈味道。他的慢炖系列适合工作日晚上照做。">查看档案</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 -->
+<section class="wwy-section wwy-section-alt" id="wwy-story">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">STORIES · 影像随笔</div>
+        <h2>镜头之外，还有一些话想说</h2>
+      </div>
+      <p class="wwy-sec-note">每一条视频背后都有没剪进去的部分，我们把这些片段留在这里。</p>
+    </div>
+    <div class="wwy-story-grid">
+      <div class="wwy-story-img">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 460'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb15c'/%3E%3Cstop offset='1' stop-color='%23ff5a1f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='460' fill='url(%23s1)'/%3E%3Crect x='100' y='120' width='400' height='230' rx='16' fill='%23fff8f2' opacity='0.94'/%3E%3Crect x='130' y='150' width='160' height='110' rx='8' fill='%23241a13' opacity='0.82'/%3E%3Cpath d='M195 185l42 20-42 20z' fill='%23ff5a1f'/%3E%3Crect x='320' y='160' width='150' height='14' rx='7' fill='%23e8d6c6'/%3E%3Crect x='320' y='192' width='110' height='14' rx='7' fill='%23e8d6c6'/%3E%3Crect x='320' y='224' width='130' height='14' rx='7' fill='%23e8d6c6'/%3E%3Ccircle cx='480' cy='80' r='42' fill='%23fff8f2' opacity='0.55'/%3E%3C/svg%3E" alt="玩物社区套路创作者在拍摄现场的花絮影像">
+      </div>
+      <div class="wwy-story-list">
+        <article class="wwy-story">
+          <h3>拍完第 12 期，我把那台失败的机器留了下来</h3>
+          <p>拆机那天其实很顺利，直到最后一颗螺丝滑丝。镜头记录了我沉默的两分钟，剪辑时犹豫要不要删。最后还是留下了，因为那才是真实的学习成本。</p>
+          <small>文 / 周野取景 · 2026-11-14</small>
+        </article>
+        <article class="wwy-story">
+          <h3>关于“套路”这个词，我改过三次理解</h3>
+          <p>最早觉得套路等于捷径，后来觉得套路是经验，现在更愿意把它看成一种对他人时间的尊重。你讲清楚前提，别人就不必重复试错。</p>
+          <small>文 / 阿椴的木桌 · 2026-11-09</small>
+        </article>
+        <article class="wwy-story">
+          <h3>阳台第三年：从追求产量到接受失败</h3>
+          <p>第一年什么都想种，第二年看产量，第三年只种自己爱吃的。种菜这件事教会我的是减法，而不是技巧堆叠。</p>
+          <small>文 / 苏小满种菜 · 2026-11-02</small>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 评价 + 榜单 -->
+<section class="wwy-section" id="wwy-review">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">VOICES · 用户口碑</div>
+        <h2>他们这么说玩物社区套路</h2>
+      </div>
+      <p class="wwy-sec-note">以下内容来自社区用户自主发布，保留原始语气与表达差异。</p>
+    </div>
+    <div class="wwy-review-grid">
+      <article class="wwy-review">
+        <p>第一次看桌游选品那期，按视频里的三条线自己列了个表，最后买的确实最耐玩。这种不带货的讲法现在很少见了。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#0f7a72">雁</span><span>雁归山</span><span class="wwy-stars">★★★★★</span></div>
+      </article>
+      <article class="wwy-review">
+        <p>收纳那套“先测量再买盒”的方法我照做了，结果省了两百多块，也少了一堆用不上的塑料盒。简单但真的有效。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#ff5a1f">梁</span><span>梁小筑</span><span class="wwy-stars">★★★★★</span></div>
+      </article>
+      <article class="wwy-review">
+        <p>老镜头清霉那期我反复看了三遍才敢动手，虽然最后我还是送去维修了，但至少知道自己能力边界在哪。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#2a6f8f">许</span><span>许半格</span><span class="wwy-stars">★★★★☆</span></div>
+      </article>
+      <article class="wwy-review">
+        <p>喜欢这个站的地方是，它不假装一切都很轻松。失败镜头保留得挺多，反而让我更信任它的内容。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#3f7a4f">赵</span><span>赵三日</span><span class="wwy-stars">★★★★★</span></div>
+      </article>
+      <article class="wwy-review">
+        <p>投稿流程比想象中顺畅，编辑给了很具体的修改意见，不是那种“再优化一下”的敷衍回复。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#7a4e9e">沈</span><span>沈白堤</span><span class="wwy-stars">★★★★☆</span></div>
+      </article>
+      <article class="wwy-review">
+        <p>唯一想提的建议是希望多出一点超短篇，通勤路上十分钟能看完的那种，现在长内容质量高但时间上有点吃不消。</p>
+        <div class="wwy-review-who"><span class="wwy-avatar" style="background:#c25a25">高</span><span>高桥以北</span><span class="wwy-stars">★★★★☆</span></div>
+      </article>
+    </div>
+
+    <div class="wwy-sec-head" style="margin-top:48px">
+      <div>
+        <div class="wwy-sec-tag">RANKING · 数据榜单</div>
+        <h2>本周三张榜单</h2>
+      </div>
+      <p class="wwy-sec-note">榜单由播放完成度、互动质量与编辑评分综合计算，不单看播放量。</p>
+    </div>
+    <div class="wwy-rank-grid">
+      <div class="wwy-rank">
+        <h3>热度榜 · 本周</h3>
+        <ol>
+          <li><span class="wwy-rank-num">1</span>周末露营轻量化清单</li>
+          <li><span class="wwy-rank-num">2</span>百元预算怎么选第一款桌游</li>
+          <li><span class="wwy-rank-num">3</span>阳台小菜园四季排期表</li>
+          <li><span class="wwy-rank-num">4</span>家庭咖啡角三个月复盘</li>
+          <li><span class="wwy-rank-num">5</span>手办防尘展示柜平价方案</li>
+        </ol>
+      </div>
+      <div class="wwy-rank">
+        <h3>新人榜 · 本月</h3>
+        <ol>
+          <li><span class="wwy-rank-num">1</span>方程剪辑</li>
+          <li><span class="wwy-rank-num">2</span>何师傅慢冲</li>
+          <li><span class="wwy-rank-num">3</span>林间整理</li>
+          <li><span class="wwy-rank-num">4</span>竹里按键</li>
+          <li><span class="wwy-rank-num">5</span>苏小满种菜</li>
+        </ol>
+      </div>
+      <div class="wwy-rank">
+        <h3>口碑榜 · 综合</h3>
+        <ol>
+          <li><span class="wwy-rank-num">1</span>翻车现场也值得记录</li>
+          <li><span class="wwy-rank-num">2</span>套路拆解实验室</li>
+          <li><span class="wwy-rank-num">3</span>玩家的一平米角落</li>
+          <li><span class="wwy-rank-num">4</span>老相机镜头发霉清理</li>
+          <li><span class="wwy-rank-num">5</span>五分钟学会加字幕</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 -->
+<section class="wwy-section wwy-section-alt" id="wwy-news">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">NEWS · 企业动态</div>
+        <h2>官方发布与社区更新</h2>
+      </div>
+      <p class="wwy-sec-note">这里记录品牌的重要节点、规则调整与活动信息，所有内容以官方发布为准。</p>
+    </div>
+    <div class="wwy-news-list">
+      <article class="wwy-news">
+        <div class="wwy-news-date"><b>18</b>11月</div>
+        <div><h3>「套路拆解实验室」第二季启动</h3><p>新一季共 12 期，首期聚焦桌游与收纳两个方向，已上线官方网站专题页。</p></div>
+      </article>
+      <article class="wwy-news">
+        <div class="wwy-news-date"><b>12</b>11月</div>
+        <div><h3>创作者扶持计划开放报名</h3><p>面向垂直领域创作者，提供剪辑支持与推荐资源，报名截止 12 月 10 日。</p></div>
+      </article>
+      <article class="wwy-news">
+        <div class="wwy-news-date"><b>05</b>11月</div>
+        <div><h3>社区投稿规范更新</h3><p>新增器材与成本披露要求，提升内容可信度，详细规则见帮助中心。</p></div>
+      </article>
+      <article class="wwy-news">
+        <div class="wwy-news-date"><b>29</b>10月</div>
+        <div><h3>与三家线下空间达成内容合作</h3><p>合作空间将作为实拍场地，为户外与手作类内容提供真实使用场景。</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + 联系 -->
+<section class="wwy-section" id="wwy-faq">
+  <div class="wwy-shell">
+    <div class="wwy-sec-head">
+      <div>
+        <div class="wwy-sec-tag">HELP · 帮助中心</div>
+        <h2>常见问题</h2>
+      </div>
+      <p class="wwy-sec-note">关于内容、投稿与合作的常见疑问，先在这里找找答案。</p>
+    </div>
+    <div class="wwy-faq">
+      <details open>
+        <summary>玩物社区套路的内容是自己拍摄的吗？</summary>
+        <p>是的。品牌官方内容由编辑团队与签约创作者联合拍摄制作，用户投稿经审核后也会纳入官方内容库，并标注作者与拍摄信息。</p>
+      </details>
+      <details>
+        <summary>如何向平台投稿？</summary>
+        <p>点击页面底部「我要投稿」按钮填写简述即可。建议附上素材链接与拍摄器材说明，编辑通常会在五个工作日内回复。</p>
+      </details>
+      <details>
+        <summary>投稿有题材限制吗？</summary>
+        <p>只要与玩法、兴趣、手艺、日常实践相关都可以。我们不接纯带货内容，也不接受未获授权的素材与背景音乐。</p>
+      </details>
+      <details>
+        <summary>页面上的器材与预算信息可靠吗？</summary>
+        <p>所有数据均由创作者实测并披露，但因地区与时间差异，实际价格可能波动。我们建议把预算区间作为参考，而非绝对标准。</p>
+      </details>
+      <details>
+        <summary>品牌合作怎么联系？</summary>
+        <p>请通过官方邮箱提交合作意向，注明品牌、合作形式与时间计划。我们更倾向长期内容共建，而非单次硬性植入。</p>
+      </details>
+      <details>
+        <summary>可以转载视频或封面图吗？</summary>
+        <p>可通过页面上的分享功能获得规范链接。如需二次编辑或商用，请先取得书面授权，并保留作者与来源标注。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 投稿联系 -->
+<section class="wwy-section" id="wwy-join">
+  <div class="wwy-shell">
+    <div class="wwy-join">
+      <div>
+        <h2>把你的套路，交给更多同好</h2>
+        <p>无论是一段完整的拆解，还是一次简短的尝试记录，我们都愿意认真看。玩物社区套路的下一期内容，也许就来自你。</p>
+        <div class="wwy-join-actions">
+          <button class="wwy-btn wwy-btn-main" id="wwy-submit-btn">我要投稿</button>
+          <button class="wwy-btn wwy-btn-ghost" id="wwy-share-join">分享给朋友</button>
+        </div>
+      </div>
+      <ul class="wwy-contact">
+        <li><b>官网</b><span>玩物社区套路官方网站 · 品牌内容与创作者社区</span></li>
+        <li><b>合作</b><span>brand@wanwu-community.example</span></li>
+        <li><b>投稿</b><span>submit@wanwu-community.example</span></li>
+        <li><b>时间</b><span>工作日 10:00–19:00，节假日以公告为准</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wwy-footer">
+  <div class="wwy-shell">
+    <div class="wwy-footer-grid">
+      <div>
+        <div class="wwy-footer-brand">
+          <span class="wwy-logo-mark" style="width:34px;height:34px;font-size:15px;border-radius:10px">玩</span>
+          <strong style="color:#fff;font-size:16px">玩物社区套路</strong>
+        </div>
+        <p>玩物社区套路官方网站，专注兴趣玩法领域的原创视频与内容社区。我们相信，把过程讲清楚，就是对同好最大的善意。</p>
+        <p>持续运营 · 正版内容 · 尊重创作者</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#wwy-focus">焦点视频</a></li>
+          <li><a href="#wwy-stream">热门视频流</a></li>
+          <li><a href="#wwy-topic">专题企划</a></li>
+          <li><a href="#wwy-story">影像随笔</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#wwy-creator">创作者矩阵</a></li>
+          <li><a href="#wwy-review">用户口碑</a></li>
+          <li><a href="#wwy-news">企业动态</a></li>
+          <li><a href="#wwy-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#wwy-about">品牌解析</a></li>
+          <li><a href="#wwy-join">合作联系</a></li>
+          <li><a href="#wwy-join">投稿入口</a></li>
+          <li><a href="#wwy-top-anchor">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wwy-footer-bottom">
+      <span>© 2026 玩物社区套路 · 官方网站 · 保留所有权利</span>
+      <span>内容由品牌与创作者共同维护 · 备案信息以官方发布为准</span>
+    </div>
+  </div>
+</footer>
+
+<button class="wwy-top" id="wwy-backtop" aria-label="回到顶部">↑</button>
+<div class="wwy-toast" id="wwy-toast"></div>
+
+<div class="wwy-modal-mask" id="wwy-modal-mask">
+  <div class="wwy-modal" role="dialog" aria-modal="true" id="wwy-modal"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toast = document.getElementById('wwy-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('wwy-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('wwy-show'); }, 1900);
+  }
+
+  /* ---- 移动端导航 ---- */
+  var burger = document.getElementById('wwy-burger');
+  var panel = document.getElementById('wwy-mobile-panel');
+  if(burger && panel){
+    burger.addEventListener('click', function(){
+      var open = panel.classList.toggle('wwy-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕' : '☰';
+    });
+    panel.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        panel.classList.remove('wwy-open');
+        burger.setAttribute('aria-expanded','false');
+        burger.textContent = '☰';
+      });
+    });
+  }
+
+  /* ---- 搜索提示 ---- */
+  var pool = [
+    '百元预算选桌游', '小户型收纳套路', '老镜头清霉', '阳台种菜排期',
+    '露营轻量化', '手办展示柜', '机械键盘试轴', '慢炖时间表',
+    '字幕制作技巧', '翻车现场记录', '套路拆解实验室', '创作者扶持计划'
+  ];
+  function bindSearch(inputId, btnId, tipId){
+    var input = document.getElementById(inputId);
+    var btn = document.getElementById(btnId);
+    var tip = tipId ? document.getElementById(tipId) : null;
+    if(!input) return;
+    function render(q){
+      if(!tip) return;
+      var list = pool.filter(function(p){ return !q || p.indexOf(q) > -1; }).slice(0,5);
+      if(!list.length){
+        tip.innerHTML = '<li>没有找到相关关键词，试试“收纳”或“露营”</li>';
+      } else {
+        tip.innerHTML = list.map(function(p){ return '<li data-k="'+p+'">'+p+'</li>'; }).join('');
+      }
+      tip.classList.add('wwy-show');
+      tip.querySelectorAll('li[data-k]').forEach(function(li){
+        li.addEventListener('click', function(){
+          input.value = li.getAttribute('data-k');
+          tip.classList.remove('wwy-show');
+          showToast('已定位关键词：' + li.getAttribute('data-k'));
+        });
+      });
+    }
+    input.addEventListener('input', function(){ render(input.value.trim()); });
+    input.addEventListener('focus', function(){ render(input.value.trim()); });
+    input.addEventListener('blur', function(){
+      setTimeout(function(){ if(tip) tip.classList.remove('wwy-show'); }, 160);
+    });
+    function go(){
+      var q = input.value.trim();
+      if(!q){ showToast('请输入关键词后再搜索'); return; }
+      if(tip) tip.classList.remove('wwy-show');
+      showToast('正在为你检索「' + q + '」相关内容');
+    }
+    if(btn) btn.addEventListener('click', go);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter') go(); });
+  }
+  bindSearch('wwy-search-input','wwy-search-btn','wwy-search-tip');
+  bindSearch('wwy-search-input-m','wwy-search-btn-m',null);
+
+  /* ---- 点赞 / 收藏 ---- */
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var txt = btn.textContent;
+      var num = parseInt(txt.replace(/[^\d]/g,''),10);
+      if(isNaN(num)) num = 0;
+      if(btn.classList.contains('wwy-on')){
+        btn.classList.remove('wwy-on');
+        btn.textContent = '赞 ' + Math.max(0, num - 1);
+      } else {
+        btn.classList.add('wwy-on');
+        btn.textContent = '赞 ' + (num + 1);
+        showToast('已点赞，感谢支持原创内容');
+      }
+    });
+  });
+  document.querySelectorAll('[data-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.classList.contains('wwy-on')){
+        btn.classList.remove('wwy-on');
+        btn.textContent = '收藏';
+      } else {
+        btn.classList.add('wwy-on');
+        btn.textContent = '已收藏';
+        showToast('已加入你的收藏夹');
+      }
+    });
+  });
+
+  /* ---- 弹窗工具 ---- */
+  var mask = document.getElementById('wwy-modal-mask');
+  var modal = document.getElementById('wwy-modal');
+  function openModal(html){
+    modal.innerHTML = '<button class="wwy-modal-close" aria-label="关闭">✕</button>' + html;
+    mask.classList.add('wwy-show');
+    modal.querySelector('.wwy-modal-close').addEventListener('click', closeModal);
+  }
+  function closeModal(){ mask.classList.remove('wwy-show'); }
+  mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* ---- 分享弹窗 ---- */
+  function shareModal(title){
+    var url = 'https://wanwu-community.example/share';
+    openModal(
+      '<h3>分享「' + (title || '玩物社区套路') + '」</h3>' +
+      '<p>把这条内容转给同样喜欢琢磨玩法的朋友，或复制规范链接自行保存。</p>' +
+      '<div class="wwy-share-row">' +
+        '<button data-channel="微信">微信</button>' +
+        '<button data-channel="微博">微博</button>' +
+        '<button data-channel="QQ">QQ</button>' +
+        '<button data-copy-link>复制链接</button>' +
+      '</div>' +
+      '<p style="font-size:12.5px;color:#8d7c70;margin:0">转载或商用请先取得授权，并保留作者与来源标注。</p>'
+    );
+    modal.querySelectorAll('[data-channel]').forEach(function(b){
+      b.addEventListener('click', function(){
+        showToast('已生成' + b.getAttribute('data-channel') + '分享卡片');
+        closeModal();
+      });
+    });
+    var cbtn = modal.querySelector('[data-copy-link]');
+    if(cbtn){
+      cbtn.addEventListener('click', function(){
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url).then(function(){
+            showToast('链接已复制到剪贴板');
+          }).catch(function(){ showToast('复制失败，请手动复制链接'); });
+        } else {
+          showToast('当前环境不支持自动复制，请手动复制链接');
+        }
+        closeModal();
+      });
+    }
+  }
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.wwy-vcard');
+      var h = card ? card.querySelector('h3') : null;
+      shareModal(h ? h.textContent : '');
+    });
+  });
+  var sh1 = document.getElementById('wwy-share-hero');
+  if(sh1) sh1.addEventListener('click', function(){ shareModal('玩物社区套路官方网站'); });
+  var sh2 = document.getElementById('wwy-share-join');
+  if(sh2) sh2.addEventListener('click', function(){ shareModal('玩物社区套路 · 投稿与合作'); });
+
+  /* ---- 复制链接 ---- */
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = 'https://wanwu-community.example/share';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){
+          showToast('内容链接已复制');
+        }).catch(function(){ showToast('复制失败，请手动复制'); });
+      } else {
+        showToast('当前环境不支持自动复制，请手动复制');
+      }
+    });
+  });
+
+  /* ---- 评论弹窗 ---- */
+  document.querySelectorAll('[data-comment]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(
+        '<h3>评论这条内容</h3>' +
+        '<p>说说你的看法，或补充一个自己验证过的细节。友善、具体、不剧透的评论更容易被看到。</p>' +
+        '<textarea placeholder="写下你的补充或疑问……"></textarea>' +
+        '<button class="wwy-btn wwy-btn-main" data-send style="width:100%;justify-content:center;margin-top:10px">发布评论</button>'
+      );
+      modal.querySelector('[data-send]').addEventListener('click', function(){
+        var ta = modal.querySelector('textarea');
+        if(ta && ta.value.trim()){
+          showToast('评论已提交，审核后展示');
+          closeModal();
+        } else {
+          showToast('先写点内容再发布吧');
+        }
+      });
+    });
+  });
+
+  /* ---- 作者档案弹窗 ---- */
+  document.querySelectorAll('[data-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = btn.getAttribute('data-author').split('|');
+      openModal(
+        '<h3>' + parts[0] + '</h3>' +
+        '<p style="font-weight:700;color:#ff5a1f">' + (parts[1] || '') + '</p>' +
+        '<p>' + (parts[2] || '') + '</p>' +
+        '<p style="font-size:12.5px;color:#8d7c70">档案信息由创作者本人维护，作品与数据每季度更新一次。</p>'
+      );
+    });
+  });
+
+  /* ---- 投稿弹窗 ---- */
+  var submitBtn = document.getElementById('wwy-submit-btn');
+  if(submitBtn){
+    submitBtn.addEventListener('click', function(){
+      openModal(
+        '<h3>投稿玩物社区套路</h3>' +
+        '<p>填写简要信息即可，编辑会在五个工作日内联系你。请勿提交未授权素材。</p>' +
+        '<input type="text" placeholder="你的称呼 / 创作者名">' +
+        '<input type="text" placeholder="联系方式（邮箱或社群账号）">' +
+        '<textarea placeholder="你的套路简述：解决什么问题、预算多少、大致流程"></textarea>' +
+        '<button class="wwy-btn wwy-btn-main" data-send style="width:100%;justify-content:center;margin-top:10px">提交投稿意向</button>'
+      );
+      modal.querySelector('[data-send]').addEventListener('click', function(){
+        var inputs = modal.querySelectorAll('input');
+        var ok = true;
+        inputs.forEach(function(i){ if(!i.value.trim()) ok = false; });
+        if(ok){ showToast('投稿意向已记录，感谢分享'); closeModal(); }
+        else { showToast('请至少填写称呼与联系方式'); }
+      });
+    });
+  }
+
+  /* ---- 回到顶部 ---- */
+  var backtop = document.getElementById('wwy-backtop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520) backtop.classList.add('wwy-show');
+    else backtop.classList.remove('wwy-show');
+  }, {passive:true});
+  backtop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---- 数字滚动 ---- */
+  var counters = document.querySelectorAll('[data-count]');
+  var done = false;
+  function runCounters(){
+    if(done) return;
+    var trigger = document.querySelector('.wwy-hero-stats');
+    if(!trigger) return;
+    var rect = trigger.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 40){
+      done = true;
+      counters.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10) || 0;
+        var cur = 0;
+        var step = Math.max(1, Math.ceil(target / 40));
+        var timer = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.textContent = cur;
+        }, 24);
+      });
+    }
+  }
+  window.addEventListener('scroll', runCounters, {passive:true});
+  window.addEventListener('load', runCounters);
+  runCounters();
+
+  /* ---- 锚点偏移补偿（吸顶高度） ---- */
+  var sticky = document.querySelector('.wwy-sticky-wrap');
+  function offsetForAnchors(){
+    if(!sticky) return;
+    var h = sticky.offsetHeight + 12;
+    document.querySelectorAll('section[id], body[id]').forEach(function(sec){
+      sec.style.scrollMarginTop = h + 'px';
+    });
+  }
+  offsetForAnchors();
+  window.addEventListener('resize', offsetForAnchors);
+
+})();
+</script>
+</body>
+          </html>
